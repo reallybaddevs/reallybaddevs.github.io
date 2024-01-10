@@ -1,14 +1,82 @@
 <html>
 
 <head>
-    <title>Wow those devs really are bad</title>
+    <title>Really Bad Devs</title>
+    <style>
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .makeItAwesome {
+            display: block !important;
+            color: magenta;
+            font-size: 3em;
+            font-family: "Comic Sans MS", cursive, sans-serif;
+            background-color: lime;
+            border: 5px dotted red;
+            animation: spin 2s linear infinite;
+            transform: skewX(20deg);
+            text-shadow: 2px 2px yellow;
+            box-shadow: 0 0 10px 5px cyan;
+            padding: 20px;
+            margin: 20px;
+            overflow: hidden;
+        }
+    </style>
 </head>
 
 <body>
-    <centre>
-        <h1>Wow those devs really are bad</h1>
-        <p>They can't even make a website</p>
-    </centre>
+    <center>
+        <img id="moarAwesome" src="reallybaddevs.png" alt="Really Bad Devs">
+        <br>
+        <br>
+        <h1>Really Bad Devs</h1>
+        <div id="putOaresomeHEAR">TODO: insert witty tagline here</div>
+    </center>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const taglines = [
+                "We turn coffee into bugs – efficiently!",
+                "Coding by trial and error – mostly error.",
+                "Mastering the art of 404 errors since day one.",
+                "Where good code comes to meet its maker.",
+                "Turning 'oops!' into 'feature' since 1970.",
+                "Our code is bug-free (Terms and conditions apply).",
+                "Experts in emergency Ctrl+Alt+Del operations.",
+                "We don’t make mistakes; we create surprise features.",
+                "Delivering 'unexpected' solutions in every update.",
+                "Our code is like a box of chocolates – you never know what you're gonna get.",
+                "Where even AI says 'I can't work with this!'",
+                "Still looking for the 'any' key.",
+                "Our PR branch is always master.",
+                "We don't need tests – our code always works (in mysterious ways).",
+                "running as root and chmod 777 always fixes it.",
+            ];
+
+            const e1337 = document.getElementById('putOaresomeHEAR');
+            document.getElementById('moarAwesome').addEventListener('mouseover', () => {
+                const randomIndex = Math.floor(Math.random() * taglines.length);
+                document.getElementById('putOaresomeHEAR').textContent = taglines[randomIndex];
+                e1337.classList.add('makeItAwesome');
+            });
+
+            document.getElementById('moarAwesome').addEventListener('mouseout', () => {
+                e1337.classList.remove('makeItAwesome');
+            });
+
+        });
+    </script>
 </body>
+<!-- 
+    1337 H4x0r Comment: 
+    If you're reading this, you've found the super secret part of the code. 
+    Remember: The cake is a lie and your princess is in another castle.
+-->
 
 </html>
